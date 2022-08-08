@@ -5,13 +5,9 @@ public class JavaClasses {
 	public static void main(String[] args) {
 		Reader reader = new Reader();
 		
-		reader.readIt(new IReadable(){
-			
-			@Override
-			public String read() {
-				throw new UnsupportedOperationException();
-			}
-		});
+		reader.readIt(new Runes());
+		
+		reader.printIt();
 
 	}
 
@@ -35,4 +31,13 @@ public void printIt() {
 	if (text != null)
 		System.out.println(text);
 	}
+}
+
+class Runes implements IReadable{
+	
+	@Override
+	public String read() {
+		return "Runes are readable too!";
+	}
+	
 }
